@@ -41,7 +41,7 @@ console.log(document.head);
 console.log(document.body);
 
 // for selecting multiple element use document.querySelectorAll
-document.querySelector('.header');
+const header = document.querySelector('.header');
 // we use the above alot when we want to select child elements 
 
 const allSection = document.querySelectorAll('.section');
@@ -59,3 +59,36 @@ console.log(allButtons);
 // this won't happend with node list 
 
 console.log(document.getElementsByClassName('btn'));
+
+/////////////// Creating and inserting elements
+
+// .insertAdjecentHTML   is used in Bankist  to create movements 
+// quick and easy way 
+
+// some other ways to create and knserting elements 
+
+const message = document.createElement('div') // this div will create dom  element , all this is the dom object 
+
+message.classList.add('cookie-message');
+// message.textContent = 'We use cookies for imporved functionality and analytics.';
+message.innerHTML = 'We use cookies for imporved functionality  and analytics. <button class = "btn btn--close-cookie">Got it! </button>';
+
+
+// header.prepend(message);
+// prepend : its basically adds the element as the first child of this( in this case header) element
+header.append(message);
+// append : its basically adds the element as the last child of this (in this case header) element
+
+
+// we can also  use before and after
+
+// header.after(message);
+// header.before(message);
+
+// delete Elements
+// Remove the message 
+
+document.querySelector('.btn--close-cookie').addEventListener('click', function () {
+   message.remove();
+   // this remove method is recent update in javascipt
+})
