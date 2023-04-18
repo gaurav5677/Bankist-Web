@@ -29,3 +29,33 @@ document.addEventListener('keydown', function (e) {
       closeModal();
    }
 });
+
+
+
+
+
+
+///////////// selecting elements 
+console.log(document.doucmentElement);
+console.log(document.head);
+console.log(document.body);
+
+// for selecting multiple element use document.querySelectorAll
+document.querySelector('.header');
+// we use the above alot when we want to select child elements 
+
+const allSection = document.querySelectorAll('.section');
+
+console.log(allSection);
+
+document.getElementById('section--1')// here we only pass idname without the selector 
+
+const allButtons = document.getElementsByTagName('button');
+
+console.log(allButtons);
+// this method actually return all the html collection 
+// if the dom changes this also update automatically 
+
+// this won't happend with node list 
+
+console.log(document.getElementsByClassName('btn'));
