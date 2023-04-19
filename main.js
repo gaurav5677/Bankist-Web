@@ -107,4 +107,15 @@ console.log(getComputedStyle(message));
 message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 20 + 'px';
 
 // document.doucmentElement.style.setProperty('--color-primary', 'orangered');
-document.documentElement.style.setProperty('--color-primary', 'orangered'); 
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Smooth Scroll 
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+
+const section1 = document.querySelector('#section--1');
+
+
+btnScrollTo.addEventListener('click', function (e) {
+   section1.scrollIntoView({ behavior: 'smooth' });
+});
