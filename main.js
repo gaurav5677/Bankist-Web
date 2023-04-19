@@ -92,3 +92,19 @@ document.querySelector('.btn--close-cookie').addEventListener('click', function 
    message.remove();
    // this remove method is recent update in javascipt
 })
+
+
+
+// style 
+// this style is set as inline style
+// directly in dom 
+// only work for inline style 
+message.style.backgroundColor = '#37383d';
+message.style.width = '104%';
+
+console.log(getComputedStyle(message));
+
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 20 + 'px';
+
+// document.doucmentElement.style.setProperty('--color-primary', 'orangered');
+document.documentElement.style.setProperty('--color-primary', 'orangered'); 
