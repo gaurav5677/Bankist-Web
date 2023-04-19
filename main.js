@@ -119,3 +119,27 @@ const section1 = document.querySelector('#section--1');
 btnScrollTo.addEventListener('click', function (e) {
    section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+
+// Tyeps of events and Event Handlers
+
+
+// MouseEnterEvent
+
+const h1 = document.querySelector('h1');
+
+
+const alertH1 = function (e) {
+   alert('addEventListener : Great ! yuo are reading the heading :D');
+
+   h1.removeEventListener('mouseenter', alertH1);
+}
+
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+// mouseenter event is a little bit like the hover event in CSS so, it fires whenever the mouse enters a certain element
+// h1.addEventListener('mouseenter', function (e) {
+//    alert('addEventListener: Great your are reading the Heading ');
+
+// });
