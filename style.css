@@ -131,6 +131,7 @@ img {
 }
 
 .nav__logo {
+  border-radius: 45%;
   height: 4.5rem;
   transition: all 0.3s;
 }
@@ -570,6 +571,7 @@ h4 {
 }
 
 .footer__logo {
+  border-radius: 45%;
   height: 5rem;
   display: block;
   margin: 0 auto;
