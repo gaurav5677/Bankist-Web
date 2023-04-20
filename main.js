@@ -117,6 +117,7 @@ tabsContainer.addEventListener('click', function (e) {
 // classlist property returns the css classnames of the elements 
 
 const handleHover = function (e) {
+   // console.log(e);
    if (e.target.classList.contains('nav__link')) {
       const link = e.target;
       const siblings = link.closest('.nav').
@@ -137,6 +138,18 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 
 nav.addEventListener('mouseout', handleHover.bind(1));
 
+
+/*                               Sticky Event                  */
+//using window buz the scroll event is available in window 
+const initialCoords = section1.getBoundingClientRect();
+
+console.log(initialCoords);
+window.addEventListener('scroll', function (e) {
+   console.log(window.scrollY);
+
+   if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky')
+   else nav.classList.remove('sticky');
+});
 
 ///////////// selecting elements 
 // console.log(document.doucmentElement);
