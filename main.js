@@ -219,55 +219,70 @@ nav.addEventListener('mouseout', handleHover.bind(1))
 
 
 // Sticky Navigation Using Intersection Observer API
-const obsCallback = function () {
-   // this callback function will get call , each time that the observed elememt, so 
-   // out target elememt  is intersecting the root element  at the threshold that we defiend 
+// const obsCallback = function (entries, observer) {
+//    // this callback function will get call , each time that the observed elememt, so 
+//    // out target elememt  is intersecting the root element  at the threshold that we defiend 
+//    entries.forEach(entry => {
+//       console.log(entry);
+//    });
 
 
 
+// };
 
+// const obsOptions = {
+//    root: null,
+//    threshold: [0, 0.2],
+// };
+
+
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+// observer.observe(section1);
+
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+console.log(navHeight);
+
+const stickyNav = function (entries) {
+   const [entry] = entries;
+   console.log(entry);
+
+   if (!entry.isIntersecting) nav.classList.add('sticky');
+   else
+      nav.classList.remove('sticky');
 }
-
-const obsOptions = {
+const headerObserver = new IntersectionObserver(stickyNav, {
    root: null,
-   threshold: 0.1;
-};
-
-
-const observer = new IntersectionObserver(obsCallback, obsOptions);
-
-
-observer.observe(section1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*                               Sticky Event                  */
-//using window buz the scroll event is available in window 
-const initialCoords = section1.getBoundingClientRect();
-
-// console.log(initialCoords);
-window.addEventListener('scroll', function (e) {
-   // console.log(window.scrollY);
-
-   if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky')
-   else nav.classList.remove('sticky');
+   threshold: 0,
+   rootMargin: '-90px',
 });
+
+headerObserver.observe(header);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /*                               Sticky Event                  */
+// //using window buz the scroll event is available in window 
+// const initialCoords = section1.getBoundingClientRect();
+
+// // console.log(initialCoords);
+// window.addEventListener('scroll', function (e) {
+//    // console.log(window.scrollY);
+
+//    if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky')
+//    else nav.classList.remove('sticky');
+// });
 
 
 
@@ -285,16 +300,16 @@ window.addEventListener('scroll', function (e) {
 // console.log(document.body);
 
 // for selecting multiple element use document.querySelectorAll
-const header = document.querySelector('.header');
-// we use the above alot when we want to select child elements 
+// const header = document.querySelector('.header');
+// // we use the above alot when we want to select child elements 
 
-const allSection = document.querySelectorAll('.section');
+// const allSection = document.querySelectorAll('.section');
 
-// console.log(allSection);
+// // console.log(allSection);
 
-document.getElementById('section--1')// here we only pass idname without the selector 
+// document.getElementById('section--1')// here we only pass idname without the selector 
 
-const allButtons = document.getElementsByTagName('button');
+// const allButtons = document.getElementsByTagName('button');
 
 // console.log(allButtons);
 // this method actually return all the html collection 
