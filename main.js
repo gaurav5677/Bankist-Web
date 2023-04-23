@@ -113,30 +113,66 @@ tabsContainer.addEventListener('click', function (e) {
 
 
 
-/*                                    Menu dade Animation                         */
-// classlist property returns the css classnames of the elements 
+/*                                    Menu  Animation                         */
 
+// classlist property returns the css classnames of the elements 
 const handleHover = function (e) {
-   // console.log(e);
    if (e.target.classList.contains('nav__link')) {
       const link = e.target;
-      const siblings = link.closest('.nav').
-         querySelectorAll('.nav__link');
+      // now we are using parent element to select each and every link 
+
+      // we use queryselector on an element to search for a certain query only in that element.
+
+      const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+      // now selecting logo
+
       const logo = link.closest('.nav').querySelector('img');
 
 
+      // now we just have to change the opacity of siblinks of the selected links 
+
       siblings.forEach(el => {
-         if (el !== link) el.style.opacity = this;
+
+         // checking if the current element is not the llink itself , because of the sibling will contain    initial link aswell 
+         if (el !== link)
+            el.style.opacity = this;
+
       });
       logo.style.opacity = this;
    }
-};
 
 
-nav.addEventListener('mouseover', handleHover.bind(0.5));
+}
+
+// passing 'argument ' into handler 
+nav.addEventListener('mouseover', handleHover.bind(0.5))
 
 
-nav.addEventListener('mouseout', handleHover.bind(1));
+nav.addEventListener('mouseout', handleHover.bind(1))
+
+
+// const handleHover = function (e) {
+//    // console.log(e);
+//    if (e.target.classList.contains('nav__link')) {
+//       const link = e.target;
+//       const siblings = link.closest('.nav').
+//          querySelectorAll('.nav__link');
+//       const logo = link.closest('.nav').querySelector('img');
+
+
+//       siblings.forEach(el => {
+//          if (el !== link) el.style.opacity = this;
+//       });
+//       logo.style.opacity = this;
+//    }
+// };
+
+
+// nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+
+// nav.addEventListener('mouseout', handleHover.bind(1));
 
 
 /*                               Sticky Event                  */
