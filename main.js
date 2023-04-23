@@ -17,6 +17,15 @@ const nav = document.querySelector('.nav');
 
 
 
+
+
+
+
+
+
+
+
+
 /////////////////////////////// Modal window   
 const openModal = function () {
    modal.classList.remove('hidden');
@@ -50,6 +59,15 @@ const section1 = document.querySelector('#section--1');
 btnScrollTo.addEventListener('click', function (e) {
    section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+
+
+
+
+
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -88,6 +106,14 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 
 
+
+
+
+
+
+
+
+
 /*                                        Tabbed Component                        */
 
 
@@ -110,6 +136,14 @@ tabsContainer.addEventListener('click', function (e) {
       .querySelector(`.operations__content--${clicked.dataset.tab}`)
       .classList.add('operations__content--active');
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -173,6 +207,15 @@ nav.addEventListener('mouseout', handleHover.bind(1))
 
 
 // nav.addEventListener('mouseout', handleHover.bind(1));
+
+
+
+
+
+
+
+
+
 
 
 /*                               Sticky Event                  */
