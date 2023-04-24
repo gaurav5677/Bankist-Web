@@ -147,6 +147,12 @@ tabsContainer.addEventListener('click', function (e) {
 
 
 
+
+
+
+
+
+
 /*                                    Menu  Animation                         */
 
 // classlist property returns the css classnames of the elements 
@@ -218,6 +224,22 @@ nav.addEventListener('mouseout', handleHover.bind(1))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Sticky Navigation Using Intersection Observer API
 // const obsCallback = function (entries, observer) {
 //    // this callback function will get call , each time that the observed elememt, so 
@@ -264,6 +286,18 @@ headerObserver.observe(header);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /////////// Reveal Sections
 
 const allSections = document.querySelectorAll('.section');
@@ -298,7 +332,9 @@ allSections.forEach(function (section) {
 
 
 
-// Lazy Loading Image 
+///////////////////////// Lazy Loading Image 
+
+
 // const imgTarget = document.querySelectorAll('img[data-src');
 const imgTarget = document.querySelectorAll('img[data-src]');
 const loadImg = function (entries, observer) {
@@ -353,6 +389,32 @@ imgTarget.forEach(img => imgObserver.observe(img))
 //    if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky')
 //    else nav.classList.remove('sticky');
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//      Building a Slider Component 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
