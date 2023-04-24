@@ -411,9 +411,10 @@ const btnRight = document.querySelector('.slider__btn--right');
 let curSlide = 0;
 const maxSlide = slides.length;
 
-const slider = document.querySelector('.slider')
-slider.style.transform = 'scale(0.5) translateX(-800px)';
-slider.style.overflow = 'visible';
+
+// const slider = document.querySelector('.slider')
+// slider.style.transform = 'scale(0.5) translateX(-800px)';
+// slider.style.overflow = 'visible';
 
 // slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
 
@@ -421,6 +422,14 @@ slider.style.overflow = 'visible';
 // 2nd       slide should be at 100% 
 // 3rd       slide should be at 200% 
 // 4th       slide should be at 400% 
+
+
+// const createDots = function () {
+//    slides.forEach(function ( , i) {
+
+//    });
+// }
+
 
 
 // the most tricky part while implementing slide function 
@@ -457,7 +466,12 @@ btnRight.addEventListener('click', nextSlide);
 btnLeft.addEventListener('click', prevSlide);
 
 
-
+document.addEventListener('keydown', function (e) {
+   // console.log(e);
+   if (e.key === 'ArrowLeft') prevSlide();
+   // we can also do some shortCircuiting  
+   e.key === 'ArrowRight' && nextSlide();
+});
 
 
 
