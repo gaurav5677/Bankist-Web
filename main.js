@@ -422,6 +422,8 @@ slider.style.overflow = 'visible';
 // 3rd       slide should be at 200% 
 // 4th       slide should be at 400% 
 
+
+// the most tricky part while implementing slide function 
 const goToSlide = function (slide) {
    slides.forEach((s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`));
 
