@@ -314,7 +314,7 @@ const reverlSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(reverlSection, {
    root: null,
-   threshold: 0.15,
+   threshold: 0.15
 });
 
 allSections.forEach(function (section) {
